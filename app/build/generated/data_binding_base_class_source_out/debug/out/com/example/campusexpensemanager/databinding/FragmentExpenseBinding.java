@@ -10,6 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -20,13 +21,16 @@ import java.lang.String;
 
 public final class FragmentExpenseBinding implements ViewBinding {
   @NonNull
-  private final RelativeLayout rootView;
+  private final ConstraintLayout rootView;
 
   @NonNull
   public final ImageView ivExpensePie;
 
   @NonNull
   public final LinearLayout ll;
+
+  @NonNull
+  public final TextView recyclerviewTitle;
 
   @NonNull
   public final RelativeLayout rr;
@@ -37,12 +41,14 @@ public final class FragmentExpenseBinding implements ViewBinding {
   @NonNull
   public final TextView tvExpense;
 
-  private FragmentExpenseBinding(@NonNull RelativeLayout rootView, @NonNull ImageView ivExpensePie,
-      @NonNull LinearLayout ll, @NonNull RelativeLayout rr, @NonNull RecyclerView rvExpense,
-      @NonNull TextView tvExpense) {
+  private FragmentExpenseBinding(@NonNull ConstraintLayout rootView,
+      @NonNull ImageView ivExpensePie, @NonNull LinearLayout ll,
+      @NonNull TextView recyclerviewTitle, @NonNull RelativeLayout rr,
+      @NonNull RecyclerView rvExpense, @NonNull TextView tvExpense) {
     this.rootView = rootView;
     this.ivExpensePie = ivExpensePie;
     this.ll = ll;
+    this.recyclerviewTitle = recyclerviewTitle;
     this.rr = rr;
     this.rvExpense = rvExpense;
     this.tvExpense = tvExpense;
@@ -50,7 +56,7 @@ public final class FragmentExpenseBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public RelativeLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -87,6 +93,12 @@ public final class FragmentExpenseBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.recyclerview_title;
+      TextView recyclerviewTitle = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerviewTitle == null) {
+        break missingId;
+      }
+
       id = R.id.rr;
       RelativeLayout rr = ViewBindings.findChildViewById(rootView, id);
       if (rr == null) {
@@ -105,8 +117,8 @@ public final class FragmentExpenseBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentExpenseBinding((RelativeLayout) rootView, ivExpensePie, ll, rr, rvExpense,
-          tvExpense);
+      return new FragmentExpenseBinding((ConstraintLayout) rootView, ivExpensePie, ll,
+          recyclerviewTitle, rr, rvExpense, tvExpense);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

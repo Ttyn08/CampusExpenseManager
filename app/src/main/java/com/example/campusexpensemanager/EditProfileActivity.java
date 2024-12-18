@@ -56,7 +56,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 }
 
                 if (!isValidAge(ageStr)) {
-                    Toast.makeText(EditProfileActivity.this, "Please enter a valid age (1-120)", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditProfileActivity.this, "Please enter a valid age (10-120)", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -84,7 +84,7 @@ public class EditProfileActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 } else {
-                    Toast.makeText(EditProfileActivity.this, "Update failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditProfileActivity.this, "Update profile failed", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -96,7 +96,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 return false;
             }
             int age = Integer.parseInt(ageStr);
-            return age > 0; // Giới hạn tuổi hợp lệ từ 1 đến 120
+            return age > 9 && age <= 120; // Giới hạn tuổi hợp lệ từ 9 đến 120
         } catch (NumberFormatException e) {
             return false;
         }

@@ -4,11 +4,10 @@ package com.example.campusexpensemanager.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.campusexpensemanager.R;
@@ -18,10 +17,7 @@ import java.lang.String;
 
 public final class LayoutExpenseItemBinding implements ViewBinding {
   @NonNull
-  private final RelativeLayout rootView;
-
-  @NonNull
-  public final CardView cvUrl;
+  private final ConstraintLayout rootView;
 
   @NonNull
   public final TextView tvExpenseAmount;
@@ -32,11 +28,10 @@ public final class LayoutExpenseItemBinding implements ViewBinding {
   @NonNull
   public final TextView tvExpenseJob;
 
-  private LayoutExpenseItemBinding(@NonNull RelativeLayout rootView, @NonNull CardView cvUrl,
+  private LayoutExpenseItemBinding(@NonNull ConstraintLayout rootView,
       @NonNull TextView tvExpenseAmount, @NonNull TextView tvExpenseDate,
       @NonNull TextView tvExpenseJob) {
     this.rootView = rootView;
-    this.cvUrl = cvUrl;
     this.tvExpenseAmount = tvExpenseAmount;
     this.tvExpenseDate = tvExpenseDate;
     this.tvExpenseJob = tvExpenseJob;
@@ -44,7 +39,7 @@ public final class LayoutExpenseItemBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public RelativeLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -69,12 +64,6 @@ public final class LayoutExpenseItemBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.cv_url;
-      CardView cvUrl = ViewBindings.findChildViewById(rootView, id);
-      if (cvUrl == null) {
-        break missingId;
-      }
-
       id = R.id.tv_expenseAmount;
       TextView tvExpenseAmount = ViewBindings.findChildViewById(rootView, id);
       if (tvExpenseAmount == null) {
@@ -93,7 +82,7 @@ public final class LayoutExpenseItemBinding implements ViewBinding {
         break missingId;
       }
 
-      return new LayoutExpenseItemBinding((RelativeLayout) rootView, cvUrl, tvExpenseAmount,
+      return new LayoutExpenseItemBinding((ConstraintLayout) rootView, tvExpenseAmount,
           tvExpenseDate, tvExpenseJob);
     }
     String missingId = rootView.getResources().getResourceName(id);

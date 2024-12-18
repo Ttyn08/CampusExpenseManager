@@ -12,24 +12,23 @@
 
         <TextView
             android:id="@+id/createText"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:textAlignment="viewStart"
-            android:text="Update"
+            android:text="Update your Expense:"
+            android:fontFamily="@font/roboto_bold"
             android:padding="8dp"
             android:textColor="@color/lavender"
             android:layout_marginStart="12dp"
             android:layout_marginTop="5dp"
-            android:textSize="25sp" />
+            android:textSize="24sp" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:src="@drawable/close_24dp_black"
-                android:layout_marginStart="250dp"
-                android:layout_marginTop="8dp"
-                android:id="@+id/cancelButton"/>
-
+        <ImageView
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_close" />
     </LinearLayout>
 
     <LinearLayout
@@ -46,7 +45,7 @@
             android:layout_weight="2"
             android:text="Amount: "
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/edt_UpdateAmount"
@@ -58,7 +57,7 @@
 
             android:inputType="number"
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 
@@ -76,7 +75,7 @@
             android:layout_weight="2"
             android:text="Type: "
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/edt_UpdateType"
@@ -87,7 +86,7 @@
             android:layout_weight="3"
 
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 
@@ -105,7 +104,7 @@
             android:layout_weight="2"
             android:text="Note: "
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/edt_UpdateNote"
@@ -116,7 +115,7 @@
             android:layout_weight="3"
 
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 

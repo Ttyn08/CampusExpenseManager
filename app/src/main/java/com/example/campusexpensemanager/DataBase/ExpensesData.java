@@ -6,6 +6,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import com.example.campusexpensemanager.MenuActivity;
 import com.example.campusexpensemanager.Model.Expenses;
@@ -49,17 +50,37 @@ public class ExpensesData extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+//    public long addNewExpenses(String amount, String name, String note, String date) {
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        ContentValues values = new ContentValues();
+//       values.put(AMOUNT_COL,amount);
+//       values.put(NAME_COL, name);
+//       values.put(NOTE_COL, note);
+//       values.put(DATE_COL, date);
+//        long insert = db.insert(TABLE_NAME, null, values);
+//        db.close();
+//        return  insert;
+//    }
+
     public long addNewExpenses(String amount, String name, String note, String date) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-       values.put(AMOUNT_COL,amount);
-       values.put(NAME_COL, name);
-       values.put(NOTE_COL, note);
-       values.put(DATE_COL, date);
-        long insert = db.insert(TABLE_NAME, null, values);
+        values.put(AMOUNT_COL, amount);
+        values.put(NAME_COL, name);
+        values.put(NOTE_COL, note);
+        values.put(DATE_COL, date);
+
+        long result = db.insert(TABLE_NAME, null, values);
         db.close();
-        return  insert;
+
+        if (result == -1) {
+            Log.d("ExpensesData", "Insert Failed: " + values.toString());
+        } else {
+            Log.d("ExpensesData", "Insert Success: " + values.toString());
+        }
+        return result;
     }
+
 
     public void update(String id, String amount, String name, String note, String date) {
         SQLiteDatabase database = this.getWritableDatabase();

@@ -6,6 +6,15 @@
     android:orientation="vertical"
     android:padding="10dp">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add your Expense:"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@color/blue"
+        android:textSize="24sp"
+        android:padding="15dp"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,8 +28,9 @@
             android:layout_marginStart="8dp"
             android:layout_weight="2"
             android:text="Amount: "
+            android:fontFamily="@font/roboto_medium"
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/edt_ExpensesAmount"
@@ -29,9 +39,10 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_weight="3"
+            android:hint="amount"
             android:inputType="number"
             android:textColor="@color/textColor"
-            android:textSize="20sp"
+            android:textSize="18sp"
             tools:ignore="SpeakableTextPresentCheck" />
 
     </LinearLayout>
@@ -49,8 +60,9 @@
             android:layout_marginStart="8dp"
             android:layout_weight="2"
             android:text="Type: "
+            android:fontFamily="@font/roboto_medium"
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/edt_ExpensesType"
@@ -58,10 +70,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
+            android:hint="type"
             android:layout_weight="3"
-
             android:textColor="@color/textColor"
-            android:textSize="20sp"
+            android:textSize="18sp"
             tools:ignore="SpeakableTextPresentCheck" />
 
     </LinearLayout>
@@ -78,20 +90,21 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="2"
+            android:fontFamily="@font/roboto_medium"
             android:text="Note: "
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/edt_ExpensesNote"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
+            android:hint="note"
             android:layout_marginRight="8dp"
             android:layout_weight="3"
-
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -106,31 +119,25 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="16dp"
             android:layout_weight="1"
-
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_rounded_input_field"
             android:text="Cancel"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="16sp"
-          />
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/btn_save"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="8dp"
             android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/bg_rounded_input_field"
             android:text="Save"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="16sp"
-
-            />
-
+            android:textSize="16sp" />
     </LinearLayout>
-
 </LinearLayout>

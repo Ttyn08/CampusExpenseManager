@@ -1,0 +1,6 @@
+com.example.campusexpensemanager.test.app-jetified-core-1.5.0-0 C:\Users\Dell\.gradle\caches\8.9\transforms\98a6f5a3c20801f0c5086588222cd455\transformed\jetified-core-1.5.0\res
+com.example.campusexpensemanager.test.app-jetified-annotation-experimental-1.3.0-1 C:\Users\Dell\.gradle\caches\8.9\transforms\ae6cca388009ba349095139a0fcda066\transformed\jetified-annotation-experimental-1.3.0\res
+com.example.campusexpensemanager.test.app-androidTest-2 D:\0.Downloads\CampusExpenseManager-main\app\build\generated\res\resValues\androidTest\debug
+com.example.campusexpensemanager.test.app-mergeDebugAndroidTestResources-3 D:\0.Downloads\CampusExpenseManager-main\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.campusexpensemanager.test.app-mergeDebugAndroidTestResources-4 D:\0.Downloads\CampusExpenseManager-main\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.campusexpensemanager.test.app-debugAndroidTest-5 D:\0.Downloads\CampusExpenseManager-main\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources

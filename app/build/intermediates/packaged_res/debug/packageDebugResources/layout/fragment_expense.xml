@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ExpenseFragment">
+    tools:context=".fragment.ExpenseFragment">
 
     <RelativeLayout
         android:id="@+id/rr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
             android:id="@+id/ll"
@@ -24,7 +25,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/bungee_inline"
+                android:fontFamily="@font/roboto_bold"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
                 android:text="@string/expenses"
                 android:textColor="@color/light_red"
                 android:textSize="24sp" />
@@ -35,29 +38,42 @@
                 android:layout_height="wrap_content"
                 android:text="$ 10000.00"
                 android:textColor="@color/light_red"
-                android:textSize="24sp" />
-
-
-
+                android:textSize="20sp" />
         </LinearLayout>
         <ImageView
             android:id="@+id/iv_expensePie"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="16dp"
             android:src="@drawable/ic_baseline_pie_chart_24"
-            app:tint="@color/purple_200" />
+            app:tint="#A03838" />
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/recyclerview_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transactions"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textAllCaps="true"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/rr"
+        android:paddingLeft="10dp"
+        tools:ignore="MissingConstraints" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvExpense"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/rr"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="20dp"
+        android:padding="15dp"
         android:scrollbars="horizontal"
-        tools:listitem="@layout/layout_expense_item2" />
+        app:layout_constraintTop_toBottomOf="@id/rr"
+        tools:listitem="@layout/layout_expense_item2"
+        tools:ignore="MissingConstraints" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout >

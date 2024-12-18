@@ -10,9 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.campusexpensemanager.Model.Expenses;
 import com.example.campusexpensemanager.R;
-import com.example.campusexpensemanager.incomeModel;
+import com.example.campusexpensemanager.Model.incomeModel;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -38,11 +37,11 @@ public class budgetAdapter2 extends RecyclerView.Adapter<budgetAdapter2.viewhold
     @Override
     public void onBindViewHolder(@NonNull budgetAdapter2.viewholder holder, int position) {
         incomeModel model = incomeModelList.get(position);
-        holder.tv_incomeAmount.setText("₹"+model.getAmount());
+        holder.tv_incomeAmount.setText("$"+model.getAmount());
 
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(Long.parseLong(model.getDate()));
-        String formattedDate = DateFormat.format("dd/MM/yyyy", calendar).toString();
+        String formattedDate = DateFormat.format("dd/MMM/yyyy", calendar).toString();
 
         holder.tv_incomeDate.setText(formattedDate);
         holder.tv_incomeJob.setText(model.getType());

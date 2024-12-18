@@ -2,7 +2,10 @@ package com.example.campusexpensemanager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Patterns;
+import android.view.MotionEvent;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -63,6 +66,27 @@ public class SignupActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
             startActivity(intent);
         });
+
+        binding.signupPassword.setOnTouchListener((v, event) -> {
+            final int DRAWABLE_RIGHT = 2; // Vị trí của `drawableEnd`
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                if (event.getRawX() >= (binding.signupPassword.getRight() - binding.signupPassword.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+                    togglePasswordVisibility(binding.signupPassword);
+                    return true;
+                }
+            }
+            return false;
+        });
+        binding.signupConfirm.setOnTouchListener((v, event) -> {
+            final int DRAWABLE_RIGHT = 2; // Vị trí của `drawableEnd`
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                if (event.getRawX() >= (binding.signupConfirm.getRight() - binding.signupConfirm.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+                    togglePasswordVisibility(binding.signupConfirm);
+                    return true;
+                }
+            }
+            return false;
+        });
     }
 
     private boolean validateInputs(String email, String password, String confirm, String name, String age, String phone) {
@@ -103,6 +127,20 @@ public class SignupActivity extends AppCompatActivity {
         }
 
         return true;
+    }
+
+    private void togglePasswordVisibility(EditText editText) {
+        if (editText.getInputType() == (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD)) {
+            // Hiển thị mật khẩu
+            editText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+            editText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_eye_open, 0); // Đổi icon mắt mở
+        } else {
+            // Ẩn mật khẩu
+            editText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            editText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_eye_closed, 0); // Đổi icon mắt đóng
+        }
+        // Di chuyển con trỏ về cuối văn bản
+        editText.setSelection(editText.getText().length());
     }
 }
 

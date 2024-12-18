@@ -3,7 +3,10 @@ package com.example.campusexpensemanager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.InputType;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -68,5 +71,32 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+//        binding.loginPassword.setOnTouchListener((v, event) -> {
+//            final int DRAWABLE_RIGHT = 2; // Vị trí của `drawableEnd`
+//            if (event.getAction() == MotionEvent.ACTION_UP) {
+//                if (event.getRawX() >= (binding.loginPassword.getRight() - binding.loginPassword.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+//                    togglePasswordVisibility(binding.loginPassword);
+//                    return true;
+//                }
+//            }
+//            return false;
+//        });
     }
+//    private void togglePasswordVisibility(EditText editText) {
+//        int selection = editText.getSelectionStart(); // Lưu vị trí con trỏ hiện tại
+//
+//        if (editText.getInputType() == (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD)) {
+//            // Hiển thị mật khẩu
+//            editText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+//            editText.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_password_login, 0, R.drawable.ic_eye_open, 0);
+//        } else {
+//            // Ẩn mật khẩu
+//            editText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+//            editText.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_password_login, 0, R.drawable.ic_eye_closed, 0);
+//        }
+//
+//        editText.setSelection(selection); // Đặt lại vị trí con trỏ về cuối
+//    }
+
 }

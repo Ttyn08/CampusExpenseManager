@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".BudgetFragment">
-
+    tools:context=".fragment.BudgetFragment">
 
     <RelativeLayout
         android:id="@+id/rr"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
             android:id="@+id/ll"
@@ -23,8 +23,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/bungee_inline"
-                android:text="Budget"
+                android:fontFamily="@font/roboto_bold"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:text="INCOME"
                 android:textColor="@color/green"
                 android:textSize="24sp" />
 
@@ -34,9 +36,18 @@
                 android:layout_height="wrap_content"
                 android:text="$10000.00"
                 android:textColor="@color/light_green"
-                android:textSize="24sp" />
-
+                android:textSize="20sp" />
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_incomePie"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/ic_baseline_pie_chart_24"
+            app:tint="#347139" />
     </RelativeLayout>
 
     <TextView
@@ -45,11 +56,12 @@
         android:layout_height="wrap_content"
         android:text="Transactions"
         android:textStyle="bold"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:textAllCaps="true"
         android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@id/rr"
-        android:paddingLeft="10dp"/>
+        android:paddingLeft="10dp"
+        tools:ignore="MissingConstraints" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_income"
@@ -60,7 +72,8 @@
         android:layout_marginTop="20dp"
         android:padding="15dp"
         android:scrollbars="horizontal"
-        tools:listitem="@layout/layout_budget_item" />
+        tools:listitem="@layout/layout_budget_item"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

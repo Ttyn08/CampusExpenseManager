@@ -27,6 +27,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.CampusExpenseManager" >
+        <activity
+            android:name="com.example.campusexpensemanager.Chart.PieChartIncome"
+            android:exported="false" />
         <activity android:name="com.example.campusexpensemanager.MenuActivity" />
         <activity
             android:name="com.example.campusexpensemanager.LoginActivity"
@@ -41,7 +44,7 @@
             android:name="com.example.campusexpensemanager.SignupActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.campusexpensemanager.PieChart"
+            android:name="com.example.campusexpensemanager.Chart.PieChart"
             android:exported="true" />
         <activity
             android:name="com.example.campusexpensemanager.MainActivity"

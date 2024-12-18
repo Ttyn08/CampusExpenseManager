@@ -5,10 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -19,10 +19,10 @@ import java.lang.String;
 
 public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
-  private final RelativeLayout rootView;
+  private final ConstraintLayout rootView;
 
   @NonNull
-  public final LinearLayout rl;
+  public final LinearLayout layoutBudgetExpense;
 
   @NonNull
   public final RecyclerView rvExpense;
@@ -31,38 +31,39 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final RecyclerView rvIncome;
 
   @NonNull
-  public final TextView tvExp;
-
-  @NonNull
   public final TextView tvExpense;
 
   @NonNull
-  public final TextView tvInc;
+  public final TextView tvExpenseLabel;
 
   @NonNull
   public final TextView tvIncome;
 
   @NonNull
-  public final TextView tvText2;
+  public final TextView tvIncomeLabel;
 
-  private FragmentHomeBinding(@NonNull RelativeLayout rootView, @NonNull LinearLayout rl,
-      @NonNull RecyclerView rvExpense, @NonNull RecyclerView rvIncome, @NonNull TextView tvExp,
-      @NonNull TextView tvExpense, @NonNull TextView tvInc, @NonNull TextView tvIncome,
-      @NonNull TextView tvText2) {
+  @NonNull
+  public final TextView tvTransactions;
+
+  private FragmentHomeBinding(@NonNull ConstraintLayout rootView,
+      @NonNull LinearLayout layoutBudgetExpense, @NonNull RecyclerView rvExpense,
+      @NonNull RecyclerView rvIncome, @NonNull TextView tvExpense, @NonNull TextView tvExpenseLabel,
+      @NonNull TextView tvIncome, @NonNull TextView tvIncomeLabel,
+      @NonNull TextView tvTransactions) {
     this.rootView = rootView;
-    this.rl = rl;
+    this.layoutBudgetExpense = layoutBudgetExpense;
     this.rvExpense = rvExpense;
     this.rvIncome = rvIncome;
-    this.tvExp = tvExp;
     this.tvExpense = tvExpense;
-    this.tvInc = tvInc;
+    this.tvExpenseLabel = tvExpenseLabel;
     this.tvIncome = tvIncome;
-    this.tvText2 = tvText2;
+    this.tvIncomeLabel = tvIncomeLabel;
+    this.tvTransactions = tvTransactions;
   }
 
   @Override
   @NonNull
-  public RelativeLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -87,9 +88,9 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.rl;
-      LinearLayout rl = ViewBindings.findChildViewById(rootView, id);
-      if (rl == null) {
+      id = R.id.layout_budget_expense;
+      LinearLayout layoutBudgetExpense = ViewBindings.findChildViewById(rootView, id);
+      if (layoutBudgetExpense == null) {
         break missingId;
       }
 
@@ -105,21 +106,15 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvExp;
-      TextView tvExp = ViewBindings.findChildViewById(rootView, id);
-      if (tvExp == null) {
-        break missingId;
-      }
-
       id = R.id.tv_expense;
       TextView tvExpense = ViewBindings.findChildViewById(rootView, id);
       if (tvExpense == null) {
         break missingId;
       }
 
-      id = R.id.tvInc;
-      TextView tvInc = ViewBindings.findChildViewById(rootView, id);
-      if (tvInc == null) {
+      id = R.id.tv_expense_label;
+      TextView tvExpenseLabel = ViewBindings.findChildViewById(rootView, id);
+      if (tvExpenseLabel == null) {
         break missingId;
       }
 
@@ -129,14 +124,20 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tv_text2;
-      TextView tvText2 = ViewBindings.findChildViewById(rootView, id);
-      if (tvText2 == null) {
+      id = R.id.tv_income_label;
+      TextView tvIncomeLabel = ViewBindings.findChildViewById(rootView, id);
+      if (tvIncomeLabel == null) {
         break missingId;
       }
 
-      return new FragmentHomeBinding((RelativeLayout) rootView, rl, rvExpense, rvIncome, tvExp,
-          tvExpense, tvInc, tvIncome, tvText2);
+      id = R.id.tv_transactions;
+      TextView tvTransactions = ViewBindings.findChildViewById(rootView, id);
+      if (tvTransactions == null) {
+        break missingId;
+      }
+
+      return new FragmentHomeBinding((ConstraintLayout) rootView, layoutBudgetExpense, rvExpense,
+          rvIncome, tvExpense, tvExpenseLabel, tvIncome, tvIncomeLabel, tvTransactions);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

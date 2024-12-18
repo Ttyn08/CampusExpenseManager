@@ -16,6 +16,9 @@
     </string-array>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/bungee_inline</item>
+        <item>@font/roboto</item>
+        <item>@font/roboto_bold</item>
+        <item>@font/roboto_medium</item>
     </array>
     <color name="background">#FFFFFFFF</color>
     <color name="background2">#FFFFFFFF</color>
@@ -31,7 +34,7 @@
     <color name="gray">#B3B2B2</color>
     <color name="green">#4CAF50</color>
     <color name="grey">#808080</color>
-    <color name="lavender">#8692f7</color>
+    <color name="lavender">#3355f7</color>
     <color name="light_blue">#2a54f4</color>
     <color name="light_green">#1ac831</color>
     <color name="light_orange">#f66224</color>
@@ -50,13 +53,13 @@
     <color name="textGreen">#ef0148</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">CampusExpense Manager</string>
-    <string name="budget">Budget</string>
+    <string name="budget">Income</string>
     <string name="close_nav">Close CampusExpense Manager</string>
-    <string name="create">Create</string>
-    <string name="create_a_budget">Create a Budget</string>
+    <string name="create">Create Transaction </string>
+    <string name="create_a_budget">Create a Income</string>
     <string name="create_a_expense">Create a Expense</string>
     <string name="expense">Expense</string>
-    <string name="expenses">Expense</string>
+    <string name="expenses">EXPENSES</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Home</string>
     <string name="open_nav">Open CampusExpense Manager</string>

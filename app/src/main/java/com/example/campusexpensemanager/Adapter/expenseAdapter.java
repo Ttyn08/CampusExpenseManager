@@ -37,11 +37,11 @@ public class expenseAdapter extends RecyclerView.Adapter<expenseAdapter.viewhold
     @Override
     public void onBindViewHolder(@NonNull viewholder holder, int position) {
         Expenses model = expenseModelList.get(position);
-        holder.tv_incomeAmount.setText("₹"+model.getAmount());
+        holder.tv_incomeAmount.setText("$"+model.getAmount());
 
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(Long.parseLong(model.getDate()));
-        String formattedDate = DateFormat.format("dd/MM/yyyy", calendar).toString();
+        String formattedDate = DateFormat.format("dd/MMM/yyyy", calendar).toString();
 
         holder.tv_incomeDate.setText(formattedDate);
         holder.tv_incomeJob.setText(model.getName());

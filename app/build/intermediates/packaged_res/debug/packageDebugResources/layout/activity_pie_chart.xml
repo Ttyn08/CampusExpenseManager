@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PieChart">
+    tools:context=".Chart.PieChart">
 
     <TextView
         android:id="@+id/tv_text"
@@ -12,8 +12,9 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
         android:text="Expenses Chart"
-        android:textColor="@color/black"
-        android:textSize="32sp" />
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@color/lavender"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/tv_text2"
@@ -24,14 +25,15 @@
         android:layout_marginTop="15dp"
         android:layout_marginBottom="20dp"
         android:text="Pie Chart Expense"
+        android:fontFamily="@font/roboto"
         android:textColor="@color/black"
-        android:textSize="28sp" />
+        android:textSize="16sp" />
 
     <lecho.lib.hellocharts.view.PieChartView
         android:id="@+id/chart"
-        android:layout_marginTop="130dp"
-        android:padding="20dp"
-        android:layout_width="match_parent"
+        android:layout_marginTop="100dp"
+        android:padding="50dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
 </RelativeLayout>

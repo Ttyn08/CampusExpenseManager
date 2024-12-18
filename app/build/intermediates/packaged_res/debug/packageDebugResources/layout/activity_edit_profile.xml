@@ -4,55 +4,76 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/editprofile">
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="@drawable/bg_backround">
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:text="EDIT PROFILE"
+        android:textSize="24dp"
+        android:textColor="#3355f7"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp"
+        android:textStyle="bold">
+    </TextView>
+
         <EditText
             android:id="@+id/editName"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Name"
-            android:textColorHint="@color/gray"
+            android:textSize="16sp"
+            android:fontFamily="@font/roboto"
             android:textColor="@color/black"
-            android:background="@drawable/boder"
+            android:background="@drawable/border"
             android:padding="16dp"
+            android:drawableLeft="@drawable/ic_username"
+            android:drawablePadding="8dp"
             android:layout_marginBottom="5dp"/>
 
         <EditText
+            android:layout_marginTop="10dp"
             android:id="@+id/editAge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_age"
+            android:fontFamily="@font/roboto"
+            android:textSize="16sp"
+            android:drawablePadding="8dp"
             android:hint="Age"
             android:inputType="number"
-            android:textColorHint="@color/gray"
             android:textColor="@color/black"
-            android:background="@drawable/boder"
+            android:background="@drawable/border"
             android:padding="16dp"
             android:layout_marginBottom="5dp"/>
 
         <EditText
+            android:layout_marginTop="10dp"
             android:id="@+id/editPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Phone number"
+            android:drawableLeft="@drawable/ic_phonenumbers"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/roboto"
+            android:hint="Phone numbers"
+            android:textSize="16sp"
             android:inputType="number"
-            android:textColorHint="@color/gray"
             android:textColor="@color/black"
-            android:background="@drawable/boder"
+            android:background="@drawable/border"
             android:padding="16dp"/>
 
         <Button
             android:id="@+id/updateButton"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="25dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Update"
-            android:textSize="24dp"
+            android:textSize="18dp"
+            android:fontFamily="@font/roboto_bold"
             android:background="@drawable/button_border"/>
-    </LinearLayout>
 </LinearLayout>

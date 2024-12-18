@@ -10,11 +10,13 @@
 
                 <TextView
                     android:id="@+id/tv_incomeDate"
-                    android:layout_width="70dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Jun 28,2019"
-                    android:textColor="@color/light_green"
-                    android:textSize="20sp"
+                    android:text="Dec 12,2024"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginTop="2dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -24,8 +26,9 @@
                     android:layout_marginLeft="28dp"
                     android:layout_toRightOf="@id/tv_incomeDate"
                     android:text="Job"
+                    android:fontFamily="@font/roboto_bold"
                     android:textColor="@color/textColor"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -36,8 +39,9 @@
                     android:layout_marginLeft="28dp"
                     android:layout_toRightOf="@id/tv_incomeDate"
                     android:text="Extra Income"
-                    android:textColor="@color/textColor"
-                    android:textSize="20sp"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="#878789"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -45,10 +49,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginRight="24dp"
                     android:text="4800"
+                    android:fontFamily="@font/roboto_medium"
                     android:textColor="@color/light_green"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
         </RelativeLayout>

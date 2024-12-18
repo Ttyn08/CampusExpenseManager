@@ -23,11 +23,12 @@
             android:layout_height="wrap_content"
             android:textAlignment="viewStart"
             android:text="@string/create"
+            android:fontFamily="@font/roboto_bold"
             android:padding="8dp"
             android:textColor="@color/lavender"
             android:layout_marginStart="12dp"
             android:layout_marginTop="5dp"
-            android:textSize="25sp" />
+            android:textSize="24sp" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -58,6 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="@font/roboto_medium"
             android:text="@string/create_a_expense"
             android:textColor="@color/lavender"
             android:layout_marginStart="2dp"
@@ -82,6 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/create_a_budget"
+            android:fontFamily="@font/roboto_medium"
             android:layout_gravity="center"
             android:textColor="@color/lavender"
             android:layout_marginStart="2dp"

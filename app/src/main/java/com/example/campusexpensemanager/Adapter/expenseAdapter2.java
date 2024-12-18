@@ -16,7 +16,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.campusexpensemanager.DataBase.ExpensesData;
-import com.example.campusexpensemanager.ExpenseFragment;
+import com.example.campusexpensemanager.fragment.ExpenseFragment;
 import com.example.campusexpensemanager.Model.Expenses;
 import com.example.campusexpensemanager.R;
 
@@ -52,7 +52,7 @@ public class expenseAdapter2 extends RecyclerView.Adapter<expenseAdapter2.viewho
 
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(Long.parseLong(model.getDate()));
-        String formattedDate = DateFormat.format("dd/MM/yyyy", calendar).toString();
+        String formattedDate = DateFormat.format("dd/MMM/yyyy", calendar).toString();
 
         holder.tv_Date.setText(formattedDate);
 

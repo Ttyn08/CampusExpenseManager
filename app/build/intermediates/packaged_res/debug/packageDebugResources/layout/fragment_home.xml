@@ -1,32 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".fragment.HomeFragment">
 
-    tools:context=".HomeFragment">
-
+    <!-- Tiêu đề Transactions -->
     <TextView
-        android:id="@+id/tv_text2"
+        android:id="@+id/tv_transactions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="20dp"
-        android:text="Dashboard"
-        android:textColor="@color/black"
-        android:textSize="28sp" />
+        android:text="Transactions"
+        android:textSize="24sp"
+        android:textColor="@color/blue"
+        android:fontFamily="@font/roboto_bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"/>
 
+    <!-- Layout hiển thị Budget và Expense -->
     <LinearLayout
-        android:id="@+id/rl"
-        android:layout_width="match_parent"
+        android:id="@+id/layout_budget_expense"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_text2"
-
         android:orientation="horizontal"
-        android:weightSum="2">
+        android:weightSum="2"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_transactions"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
+        <!-- Budget -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -37,21 +44,23 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/bungee_inline"
                 android:text="Budget"
+                android:textSize="18sp"
                 android:textColor="@color/light_green"
-                android:textSize="24sp" />
+                android:fontFamily="@font/roboto_medium"/>
 
             <TextView
                 android:id="@+id/tv_income"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rs. 10000.00"
+                android:text="$ 10000.00"
+                android:textSize="16sp"
                 android:textColor="@color/light_green"
-                android:textSize="24sp" />
+                android:fontFamily="@font/roboto"/>
 
         </LinearLayout>
 
+        <!-- Expense -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -62,60 +71,69 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/bungee_inline"
                 android:text="Expense"
+                android:textSize="18sp"
                 android:textColor="@color/light_red"
-                android:textSize="24sp" />
+                android:fontFamily="@font/roboto_medium"/>
 
             <TextView
                 android:id="@+id/tv_expense"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rs. 10000.00"
+                android:text="$ 10000.00"
+                android:textSize="16sp"
                 android:textColor="@color/light_red"
-                android:textSize="24sp" />
+                android:fontFamily="@font/roboto"/>
 
         </LinearLayout>
-
     </LinearLayout>
 
+    <!-- Income Section -->
     <TextView
-        android:id="@+id/tvInc"
+        android:id="@+id/tv_income_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rl"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="30dp"
         android:text="Income:"
-        android:textColor="@color/textColor"
-        android:textSize="24sp" />
+        android:textSize="18sp"
+        android:textColor="@color/blue"
+        android:fontFamily="@font/roboto_bold"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/layout_budget_expense"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="10dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_income"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvInc"
-        android:layout_marginTop="8dp"
-        android:scrollbars="horizontal"
+        android:layout_width="0dp"
+        android:layout_height="230dp"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_income_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:listitem="@layout/layout_income_item" />
 
+    <!-- Expense Section -->
     <TextView
-        android:id="@+id/tvExp"
+        android:id="@+id/tv_expense_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rv_income"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="30dp"
         android:text="Expense:"
-        android:textColor="@color/textColor"
-        android:textSize="24sp" />
+        android:textSize="18sp"
+        android:textColor="@color/blue"
+        android:fontFamily="@font/roboto_bold"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/rv_income"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="10dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_expense"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvExp"
-        android:layout_marginTop="8dp"
-        android:scrollbars="horizontal"
+        android:layout_width="0dp"
+        android:layout_height="230dp"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_expense_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:listitem="@layout/layout_expense_item" />
-</RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,7 @@ package com.example.campusexpensemanager.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -23,6 +24,9 @@ public final class FragmentBudgetBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final ImageView ivIncomePie;
+
+  @NonNull
   public final LinearLayout ll;
 
   @NonNull
@@ -37,10 +41,11 @@ public final class FragmentBudgetBinding implements ViewBinding {
   @NonNull
   public final TextView tvIncome;
 
-  private FragmentBudgetBinding(@NonNull ConstraintLayout rootView, @NonNull LinearLayout ll,
-      @NonNull TextView recyclerviewTitle, @NonNull RelativeLayout rr,
+  private FragmentBudgetBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView ivIncomePie,
+      @NonNull LinearLayout ll, @NonNull TextView recyclerviewTitle, @NonNull RelativeLayout rr,
       @NonNull RecyclerView rvIncome, @NonNull TextView tvIncome) {
     this.rootView = rootView;
+    this.ivIncomePie = ivIncomePie;
     this.ll = ll;
     this.recyclerviewTitle = recyclerviewTitle;
     this.rr = rr;
@@ -75,6 +80,12 @@ public final class FragmentBudgetBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.iv_incomePie;
+      ImageView ivIncomePie = ViewBindings.findChildViewById(rootView, id);
+      if (ivIncomePie == null) {
+        break missingId;
+      }
+
       id = R.id.ll;
       LinearLayout ll = ViewBindings.findChildViewById(rootView, id);
       if (ll == null) {
@@ -105,8 +116,8 @@ public final class FragmentBudgetBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentBudgetBinding((ConstraintLayout) rootView, ll, recyclerviewTitle, rr,
-          rvIncome, tvIncome);
+      return new FragmentBudgetBinding((ConstraintLayout) rootView, ivIncomePie, ll,
+          recyclerviewTitle, rr, rvIncome, tvIncome);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

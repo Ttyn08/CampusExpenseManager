@@ -1,12 +1,16 @@
 package com.example.campusexpensemanager;
 
 import android.os.Bundle;
+import android.text.InputType;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.campusexpensemanager.databinding.ActivityChangePasswordBinding;
 
 public class ChangePasswordActivity extends AppCompatActivity {
 
@@ -17,10 +21,15 @@ public class ChangePasswordActivity extends AppCompatActivity {
     private DatabaseHelper databaseHelper;
     private String email;
 
+    ActivityChangePasswordBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_password);
+
+        binding = ActivityChangePasswordBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         // Khởi tạo các view
         oldPasswordEditText = findViewById(R.id.oldPasswordEditText);
@@ -62,6 +71,50 @@ public class ChangePasswordActivity extends AppCompatActivity {
                 }
             }
         });
+
+        binding.oldPasswordEditText.setOnTouchListener((v, event) -> {
+            final int DRAWABLE_RIGHT = 2; // Vị trí của `drawableEnd`
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                if (event.getRawX() >= (binding.oldPasswordEditText.getRight() - binding.oldPasswordEditText.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+                    togglePasswordVisibility(binding.oldPasswordEditText);
+                    return true;
+                }
+            }
+            return false;
+        });
+        binding.newPasswordEditText.setOnTouchListener((v, event) -> {
+            final int DRAWABLE_RIGHT = 2; // Vị trí của `drawableEnd`
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                if (event.getRawX() >= (binding.newPasswordEditText.getRight() - binding.newPasswordEditText.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+                    togglePasswordVisibility(binding.newPasswordEditText);
+                    return true;
+                }
+            }
+            return false;
+        });
+        binding.confirmNewPasswordEditText.setOnTouchListener((v, event) -> {
+            final int DRAWABLE_RIGHT = 2; // Vị trí của `drawableEnd`
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                if (event.getRawX() >= (binding.confirmNewPasswordEditText.getRight() - binding.confirmNewPasswordEditText.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+                    togglePasswordVisibility(binding.confirmNewPasswordEditText);
+                    return true;
+                }
+            }
+            return false;
+        });
+    }
+    private void togglePasswordVisibility(EditText editText) {
+        if (editText.getInputType() == (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD)) {
+            // Hiển thị mật khẩu
+            editText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+            editText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_eye_open, 0); // Đổi icon mắt mở
+        } else {
+            // Ẩn mật khẩu
+            editText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            editText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_eye_closed, 0); // Đổi icon mắt đóng
+        }
+        // Di chuyển con trỏ về cuối văn bản
+        editText.setSelection(editText.getText().length());
     }
 }
 

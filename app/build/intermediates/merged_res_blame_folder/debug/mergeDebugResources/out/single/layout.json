@@ -16,10 +16,6 @@
         "source": "C:\\Users\\Dell\\.gradle\\daemon\\8.9\\com.example.campusexpensemanager.app-main-37:\\layout\\fragment_home.xml"
     },
     {
-        "merged": "com.example.campusexpensemanager.app-mergeDebugResources-34:/layout/bottomsheetlayout.xml",
-        "source": "com.example.campusexpensemanager.app-main-37:/layout/bottomsheetlayout.xml"
-    },
-    {
         "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.9\\com.example.campusexpensemanager.app-mergeDebugResources-34:\\layout\\activity_signup.xml",
         "source": "C:\\Users\\Dell\\.gradle\\daemon\\8.9\\com.example.campusexpensemanager.app-main-37:\\layout\\activity_signup.xml"
     },
@@ -36,12 +32,20 @@
         "source": "C:\\Users\\Dell\\.gradle\\daemon\\8.9\\com.example.campusexpensemanager.app-main-37:\\layout\\layout_budget_item.xml"
     },
     {
+        "merged": "com.example.campusexpensemanager.app-mergeDebugResources-34:/layout/fragment_home.xml",
+        "source": "com.example.campusexpensemanager.app-main-37:/layout/fragment_home.xml"
+    },
+    {
         "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.9\\com.example.campusexpensemanager.app-mergeDebugResources-34:\\layout\\layout_income_item.xml",
         "source": "C:\\Users\\Dell\\.gradle\\daemon\\8.9\\com.example.campusexpensemanager.app-main-37:\\layout\\layout_income_item.xml"
     },
     {
         "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.9\\com.example.campusexpensemanager.app-mergeDebugResources-34:\\layout\\activity_login.xml",
         "source": "C:\\Users\\Dell\\.gradle\\daemon\\8.9\\com.example.campusexpensemanager.app-main-37:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.9\\com.example.campusexpensemanager.app-mergeDebugResources-34:\\layout\\activity_pie_chart_income.xml",
+        "source": "C:\\Users\\Dell\\.gradle\\daemon\\8.9\\com.example.campusexpensemanager.app-main-37:\\layout\\activity_pie_chart_income.xml"
     },
     {
         "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.9\\com.example.campusexpensemanager.app-mergeDebugResources-34:\\layout\\nav_header.xml",
@@ -54,10 +58,6 @@
     {
         "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.9\\com.example.campusexpensemanager.app-mergeDebugResources-34:\\layout\\bottomsheetlayout.xml",
         "source": "C:\\Users\\Dell\\.gradle\\daemon\\8.9\\com.example.campusexpensemanager.app-main-37:\\layout\\bottomsheetlayout.xml"
-    },
-    {
-        "merged": "com.example.campusexpensemanager.app-mergeDebugResources-34:/layout/fragment_expense.xml",
-        "source": "com.example.campusexpensemanager.app-main-37:/layout/fragment_expense.xml"
     },
     {
         "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.9\\com.example.campusexpensemanager.app-mergeDebugResources-34:\\layout\\update_budget.xml",
@@ -74,10 +74,6 @@
     {
         "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.9\\com.example.campusexpensemanager.app-mergeDebugResources-34:\\layout\\activity_pie_chart.xml",
         "source": "C:\\Users\\Dell\\.gradle\\daemon\\8.9\\com.example.campusexpensemanager.app-main-37:\\layout\\activity_pie_chart.xml"
-    },
-    {
-        "merged": "com.example.campusexpensemanager.app-mergeDebugResources-34:/layout/expense_add_item.xml",
-        "source": "com.example.campusexpensemanager.app-main-37:/layout/expense_add_item.xml"
     },
     {
         "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.9\\com.example.campusexpensemanager.app-mergeDebugResources-34:\\layout\\expense_add_item.xml",
@@ -98,9 +94,5 @@
     {
         "merged": "C:\\Users\\Dell\\.gradle\\daemon\\8.9\\com.example.campusexpensemanager.app-mergeDebugResources-34:\\layout\\activity_edit_profile.xml",
         "source": "C:\\Users\\Dell\\.gradle\\daemon\\8.9\\com.example.campusexpensemanager.app-main-37:\\layout\\activity_edit_profile.xml"
-    },
-    {
-        "merged": "com.example.campusexpensemanager.app-mergeDebugResources-34:/layout/activity_pie_chart.xml",
-        "source": "com.example.campusexpensemanager.app-main-37:/layout/activity_pie_chart.xml"
     }
 ]

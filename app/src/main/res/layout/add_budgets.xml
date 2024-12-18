@@ -5,6 +5,15 @@
     android:orientation="vertical"
     android:padding="10dp">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add your Income:"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@color/blue"
+        android:textSize="24sp"
+        android:padding="15dp"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,8 +27,9 @@
             android:layout_marginLeft="8dp"
             android:layout_weight="2"
             android:text="Amount: "
+            android:fontFamily="@font/roboto_medium"
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/et_incomeAmount"
@@ -28,10 +38,11 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_weight="3"
+            android:fontFamily="@font/roboto"
             android:hint="amount"
             android:inputType="number"
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 
@@ -45,11 +56,12 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
             android:layout_marginLeft="8dp"
             android:layout_weight="2"
             android:text="Type: "
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/et_incomeType"
@@ -57,10 +69,11 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
+            android:fontFamily="@font/roboto"
             android:layout_weight="3"
             android:hint="type"
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 
@@ -77,8 +90,9 @@
             android:layout_marginLeft="8dp"
             android:layout_weight="2"
             android:text="Note: "
+            android:fontFamily="@font/roboto_medium"
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/et_incomeNote"
@@ -88,8 +102,9 @@
             android:layout_marginRight="8dp"
             android:layout_weight="3"
             android:hint="note"
+            android:fontFamily="@font/roboto"
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 
@@ -104,9 +119,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="16dp"
             android:layout_weight="1"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/bg_rounded_input_field"
             android:text="Cancel"
             android:textAllCaps="false"
@@ -118,9 +132,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="8dp"
             android:layout_weight="1"
+            android:layout_marginStart="10dp"
             android:background="@drawable/bg_rounded_input_field"
             android:text="Save"
             android:textAllCaps="false"

@@ -3,24 +3,25 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="176dp"
-    android:gravity="bottom"
-    android:padding="30dp"
-    android:background="@drawable/headerbkg"
+    android:layout_height="200dp"
+    android:gravity="top"
+    android:padding="20dp"
+    android:background="@drawable/nav_header"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo"
-
-        />
+        android:layout_marginTop="10dp"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:src="@drawable/logo" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Campus Expense Manager"
-        android:textColor="@color/white"
+        android:layout_marginTop="5dp"
+        android:text="Campus Expense Manager - Group 1"
+        android:textColor="@color/lavender"
+        android:fontFamily="@font/roboto"
         android:textStyle="bold"/>
 
 </LinearLayout>

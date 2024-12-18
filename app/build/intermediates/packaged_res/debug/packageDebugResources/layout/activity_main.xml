@@ -19,18 +19,19 @@
         android:paddingTop="15dp">
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:src="@drawable/avatar" />
 
         <TextView
             android:id="@+id/hnameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="My Name"
-            android:textColor="@color/pink"
-            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:text="User Name"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/black"
+            android:textSize="18dp"
             android:textStyle="bold" />
 
         <View
@@ -40,13 +41,14 @@
             android:layout_marginLeft="12dp"
             android:layout_marginTop="8dp"
             android:layout_marginRight="12dp"
-            android:background="@color/pink" />
+            android:background="@color/black" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingLeft="15dp"
@@ -61,10 +63,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
+            android:fontFamily="@font/roboto_medium"
             android:text="Name"
             android:textColor="@color/black"
-            android:textSize="18dp"
-            android:textStyle="bold" />
+            android:textSize="16dp"/>
 
         <TextView
             android:id="@+id/nameTextView"
@@ -72,15 +74,15 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:text="My Name"
+            android:fontFamily="@font/roboto"
             android:textColor="@color/black"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
     </LinearLayout>
 
     <View
         android:layout_width="wrap_content"
         android:layout_height="1dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         android:background="@color/gray" />
 
@@ -88,7 +90,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingLeft="15dp"
@@ -97,16 +100,16 @@
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_age" />
+            android:src="@drawable/ic_age_group" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="Age"
+            android:fontFamily="@font/roboto_medium"
             android:textColor="@color/black"
-            android:textSize="18dp"
-            android:textStyle="bold" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/ageTextView"
@@ -114,15 +117,15 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:text="Age"
+            android:fontFamily="@font/roboto"
             android:textColor="@color/black"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
     </LinearLayout>
 
     <View
         android:layout_width="wrap_content"
         android:layout_height="1dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         android:background="@color/gray" />
 
@@ -130,7 +133,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingLeft="15dp"
@@ -146,9 +150,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="Email"
+            android:fontFamily="@font/roboto_medium"
             android:textColor="@color/black"
-            android:textSize="18dp"
-            android:textStyle="bold" />
+            android:textSize="16dp"/>
 
         <TextView
             android:id="@+id/emailTextView"
@@ -156,22 +160,23 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="29dp"
             android:text="user@gmail.com"
+            android:fontFamily="@font/roboto"
             android:textColor="@color/black"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
     </LinearLayout>
 
     <View
         android:layout_width="wrap_content"
         android:layout_height="1dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         android:background="@color/gray" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingLeft="15dp"
@@ -187,47 +192,46 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="Phone"
+            android:fontFamily="@font/roboto_medium"
             android:textColor="@color/black"
-            android:textSize="18dp"
-            android:textStyle="bold" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/phoneTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="22dp"
-            android:text="058614"
+            android:layout_marginLeft="18dp"
+            android:text="1234567890"
             android:textColor="@color/black"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
     </LinearLayout>
 
     <View
         android:layout_width="wrap_content"
         android:layout_height="1dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         android:background="@color/gray" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/editProfileTextView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"
             android:layout_marginRight="70dp"
+            android:fontFamily="@font/roboto_bold"
             android:background="@drawable/button_border"
             android:drawableLeft="@drawable/ic_edit"
             android:text="Edit profile"
             android:textColor="@color/white"
-            android:textSize="18dp"
-            android:textStyle="bold" />
+            android:textSize="18dp" />
 
         <Button
             android:id="@+id/changePasswordTextView"
@@ -236,12 +240,12 @@
             android:layout_marginLeft="70dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="70dp"
+            android:fontFamily="@font/roboto_bold"
             android:background="@drawable/button_border"
             android:drawableLeft="@drawable/ic_lock"
             android:text="Change Password"
             android:textColor="@color/white"
-            android:textSize="18dp"
-            android:textStyle="bold" />
+            android:textSize="18dp" />
 
     </LinearLayout>
 

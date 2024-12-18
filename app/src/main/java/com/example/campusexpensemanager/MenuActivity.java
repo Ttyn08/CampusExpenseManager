@@ -1,12 +1,10 @@
 package com.example.campusexpensemanager;
 
-import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,18 +27,21 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.campusexpensemanager.DataBase.DatabaseHandler1;
 import com.example.campusexpensemanager.DataBase.ExpensesData;
 import com.example.campusexpensemanager.Model.Expenses;
+import com.example.campusexpensemanager.fragment.BudgetFragment;
+import com.example.campusexpensemanager.fragment.ExpenseFragment;
+import com.example.campusexpensemanager.fragment.HomeFragment;
+import com.example.campusexpensemanager.fragment.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,7 +56,7 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
     private  NavigationView navigationView;
     FloatingActionButton fab;
 
-     private  HomeFragment homeFragment;
+     private HomeFragment homeFragment;
      private ExpenseFragment expenseFragment;
      private BudgetFragment budgetFragment;
      private ProfileFragment profileFragment;
@@ -123,8 +124,9 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
                }
                return false;
            }
-
        });
+
+
         fragmentManager = getSupportFragmentManager();
         openFragment(new HomeFragment());
                 fab.setOnClickListener(new View.OnClickListener() {
@@ -216,11 +218,19 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-    private void openFragment(Fragment fragment){
+//    private void openFragment(Fragment fragment){
+//        FragmentTransaction transaction = fragmentManager.beginTransaction();
+//        transaction.replace(R.id.frame_layout, fragment);
+//        transaction.commit();
+//    }
+
+    private void openFragment(Fragment fragment) {
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.frame_layout, fragment);
+        transaction.addToBackStack(null); // Giữ lại trạng thái trước đó
         transaction.commit();
     }
+
 
     private void showExpenseDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

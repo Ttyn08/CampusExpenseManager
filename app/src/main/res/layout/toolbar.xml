@@ -23,19 +23,19 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Account Settings"
-            android:textSize="16dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textSize="22dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/lavender"
             android:gravity="center"/>
         <TextView
             android:id="@+id/logoutTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Logout"
+            android:drawableLeft="@drawable/ic_logout"
+            android:gravity="center"
             android:textColor="@color/pink"
             android:layout_alignParentRight="true"
-            android:textStyle="bold"
-            android:textSize="15dp"/>
+            android:textSize="16dp"/>
 
     </LinearLayout>
 
@@ -43,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@+id/linearll"
-        android:background="@color/pink"
+        android:background="@color/black"
         android:paddingRight="8dp"
         android:paddingLeft="8dp"/>
 </RelativeLayout>
